@@ -1,0 +1,16 @@
+RELATÓRIO DE USUÁRIOS
+======================
+
+1. Nome: mcihel, Idade: 18, Curso: -, Email: mic***@gmail.com
+2. Nome: michel, Idade: 18, Curso: -, Email: mic***@gmail.com
+3. Nome: teste, Idade: 18, Curso: -, Email: tes***@gmail.com
+4. Nome: asjda, Idade: 18, Curso: -, Email: mic***@gmail.com
+5. Nome: teste, Idade: 18, Curso: -, Email: hu***@g.com
+6. Nome: Piloto1, Idade: 46, Curso: -, Email: tes***@gm.com
+7. Nome: rafael, Idade: 17, Curso: Lógica Computacional, Email: raf***@gmail.com
+
+ESTATÍSTICAS DE IDADE
+----------------------
+Média: 21.86
+Mediana: 18
+Moda: 18
