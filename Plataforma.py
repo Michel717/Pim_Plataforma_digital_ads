@@ -2,7 +2,7 @@ import json
 import os
 import hashlib
 import statistics
-import re  # Para validar senha forte
+import re
 
 ARQUIVO_USUARIOS = "usuarios.json"
 
@@ -57,6 +57,12 @@ def cadastrar_usuario():
     idade = int(input("Idade: "))
     email = input("Email: ")
 
+    # Consentimento do titular
+    consentimento = input("Você autoriza o uso dos seus dados para fins educacionais? (s/n): ").strip().lower()
+    if consentimento != 's':
+        print("❌ Cadastro cancelado por falta de consentimento.")
+        return
+
     print("Escolha o curso:")
     print("1. Lógica Computacional")
     print("2. Segurança Digital")
@@ -110,6 +116,21 @@ def fazer_login():
             print(f"🎓 Curso: {usuario.get('curso', 'Não informado')}")
             return
     print("❌ E-mail ou senha incorretos.")
+
+def excluir_usuario():
+    print("🔐 Para excluir sua conta, informe seus dados:")
+    email = input("Email: ")
+    senha = input("Senha: ")
+    senha_hash = criptografar_senha(senha)
+
+    usuarios = carregar_usuarios()
+    novos_usuarios = [u for u in usuarios if not (u["email"] == email and u["senha"] == senha_hash)]
+
+    if len(novos_usuarios) != len(usuarios):
+        salvar_usuarios(novos_usuarios)
+        print("🗑️ Conta excluída com sucesso.")
+    else:
+        print("❌ E-mail ou senha incorretos. Nenhum dado foi removido.")
 
 def listar_usuarios():
     usuarios = carregar_usuarios()
@@ -181,7 +202,8 @@ def menu():
         print("3. Listar usuários")
         print("4. Ver estatísticas de idade")
         print("5. Gerar relatório em .txt")
-        print("6. Sair")
+        print("6. Excluir minha conta")
+        print("7. Sair")
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
@@ -195,6 +217,8 @@ def menu():
         elif opcao == "5":
             gerar_relatorio()
         elif opcao == "6":
+            excluir_usuario()
+        elif opcao == "7":
             print("👋 Saindo...")
             break
         else:
