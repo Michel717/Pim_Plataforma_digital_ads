@@ -38,5 +38,12 @@
         "email": "rafamelges42@gmail.com",
         "senha": "f3ff0be478cd2b5214a0f7a85ace18ec538b05b1dc593bc67622e2967c82f7c1",
         "curso": "Lógica Computacional"
+    },
+    {
+        "nome": "Teste6",
+        "idade": 23,
+        "email": "tst@g.com",
+        "senha": "83e8d83b895007359a833573704bf2974f5de7e96da2ddb0b0096a0a2c0fdfd3",
+        "curso": "Segurança Digital"
     }
 ]

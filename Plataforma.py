@@ -224,6 +224,6 @@ def menu():
         else:
             print("❌ Opção inválida. Tente novamente.")
 
-# ───────────── EXECUÇÃO ─────────────
+# ───────────── EXECUÇÃO ────────────
 
 menu()
